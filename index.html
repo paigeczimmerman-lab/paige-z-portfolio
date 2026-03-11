@@ -98,69 +98,48 @@ margin-bottom:20px;
 
 /* PORTFOLIO CARDS */
 
-.carousel-container{
-  position:relative;
-  overflow:hidden;
-  max-width:1000px;
-  margin:auto;
+.portfolio-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
 }
-
-.carousel-track{
-  display:flex;
-  transition:transform 0.4s ease-in-out;
-}
-
-.carousel-item{
-  min-width:100%;
-  box-sizing:border-box;
+  
+.portfolio-item {
   background:#E5E6E4;
-  padding:20px;
+  padding:22px;
+  margin-top:16px;
   border-radius:10px;
-  margin-right:20px;
   box-shadow:0 6px 14px rgba(0,0,0,0.05);
-  text-align:center;
+  display:flex;
+  gap:20px;
+  align-items:center;
+  transition:transform .25s ease, box-shadow .25s ease;
 }
 
-.carousel-item img{
-  width:100%;
-  height:auto;
-  border-radius:8px;
-  margin-bottom:15px;
+.portfolio-item:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
 }
 
-.carousel-item h3{
-  margin:10px 0 8px;
+.portfolio-item img {
+  width:170px;
+  height:110px;
+  object-fit:cover;
+  border-radius:6px;
+  transition:transform .3s ease;
 }
 
-.carousel-item p{
-  color:#444;
+.portfolio-item:hover img{
+transform:scale(1.05);
+}
+  
+.portfolio-item-content {
+  flex:1;
 }
 
-.carousel-container button{
-  position:absolute;
-  top:50%;
-  transform:translateY(-50%);
-  background:#847577;
-  border:none;
-  color:white;
-  padding:10px 16px;
-  cursor:pointer;
-  border-radius:50%;
-  font-size:18px;
+.portfolio-item h3{
+margin-top:0;
 }
-
-.carousel-container .prev{
-  left:10px;
-}
-
-.carousel-container .next{
-  right:10px;
-}
-
-.carousel-container button:hover{
-  background:#6f6264;
-}
-
 
 /* BUTTONS */
 
@@ -196,34 +175,34 @@ footer {
   font-size:14px;
 }
 
-/* Hover lift & shadow */
-.carousel-item{
-  transition:transform .25s ease, box-shadow .25s ease;
-}
+/* MOBILE */
 
-.carousel-item:hover{
-  transform: translateY(-4px);
-  box-shadow:0 12px 24px rgba(0,0,0,0.12);
-}
-
-/* Title clamp for long titles */
-.carousel-item h3{
-  display:-webkit-box;
-  -webkit-line-clamp:2;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
-  margin:10px 0 8px;
-}
-
-/* Mobile arrows smaller */
 @media(max-width:700px){
-  .carousel-item{
-    padding:15px;
-  }
-  .carousel-container button{
-    font-size:14px;
-    padding:8px;
-  }
+
+header h1{
+font-size:32px;
+}
+
+#home p{
+font-size:18px;
+}
+
+.portfolio-item{
+flex-direction:column;
+text-align:center;
+}
+
+.portfolio-item img{
+width:100%;
+height:auto;
+}
+
+}
+
+@media(max-width:800px){
+.portfolio-grid{
+grid-template-columns:1fr;
+}
 }
 
 </style>
@@ -258,65 +237,65 @@ I have hands-on experience creating content, managing events, and crafting engag
 </section>
 
 <section id="portfolio">
-  <h2>Portfolio</h2>
 
-  <div class="carousel-container">
-    <button class="prev">&#10094;</button>
+<h2>Portfolio</h2>
 
-    <div class="carousel-track">
+<div class="portfolio-grid">
 
-      <!-- Article 1 -->
-      <div class="carousel-item">
-        <img src="https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_104,w_4767,h_2681/c_fill,w_2160,ar_16:9,f_auto,q_auto,g_auto/images%2FGettyImages%2Fmmsport%2F403%2F01jxw0phvt41pss16nnk.jpg" alt="Article 1">
-        <h3>Hailey Van Lith Adapted, Learned and Led as a Rookie with Chicago Sky</h3>
-        <p>Hailey Van Lith navigated her first WNBA season with the Chicago Sky by adapting to new roles, learning quickly, and stepping up as a leader on and off the court.</p>
-        <a href="https://sky.wnba.com/news/hailey-van-lith-adapted-learned-and-led-as-a-rookie-with-chicago-sky" target="_blank"><button>Read Article</button></a>
-      </div>
+<div class="portfolio-item">
+<img src="https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_104,w_4767,h_2681/c_fill,w_2160,ar_16:9,f_auto,q_auto,g_auto/images%2FGettyImages%2Fmmsport%2F403%2F01jxw0phvt41pss16nnk.jpg">
+<div class="portfolio-item-content">
+<h3>Hailey Van Lith Adapted, Learned and Led as a Rookie with Chicago Sky</h3>
+<p>Hailey Van Lith navigated her first WNBA season with the Chicago Sky by adapting to new roles, learning quickly, and stepping up as a leader on and off the court.</p>
+<a href="https://sky.wnba.com/news/hailey-van-lith-adapted-learned-and-led-as-a-rookie-with-chicago-sky" target="_blank"><button>Read Article</button></a>
+</div>
+</div>
 
-      <!-- Article 2 -->
-      <div class="carousel-item">
-        <img src="https://images.seattletimes.com/wp-content/uploads/2025/08/08302025_storm_205331.jpg?d=1536x1024" alt="Article 2">
-        <h3>Preview: Sky Host Storm in Second Meeting of the Season</h3>
-        <p>A look ahead to the Chicago Sky’s home matchup with the Seattle Storm as both teams seek different fortunes in their second meeting of the season.</p>
-        <a href="https://sky.wnba.com/news/preview-sky-host-storm-in-second-meeting-of-the-season" target="_blank"><button>Read Article</button></a>
-      </div>
+<div class="portfolio-item">
+<img src="https://images.seattletimes.com/wp-content/uploads/2025/08/08302025_storm_205331.jpg?d=1536x1024">
+<div class="portfolio-item-content">
+<h3>Preview: Sky Host Storm in Second Meeting of the Season</h3>
+<p>A look ahead to the Chicago Sky’s home matchup with the Seattle Storm as both teams seek different fortunes in their second meeting of the season.</p>
+<a href="https://sky.wnba.com/news/preview-sky-host-storm-in-second-meeting-of-the-season" target="_blank"><button>Read Article</button></a>
+</div>
+</div>
 
-      <!-- Article 3 -->
-      <div class="carousel-item">
-        <img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2232943689.jpg?c=original&q=w_860,c_fill/f_avif" alt="Article 3">
-        <h3>Angel Reese 2025 Season Recap</h3>
-        <p>A look back at Angel Reese’s 2025 season with the Chicago Sky, highlighting her breakout performances, historic rebounding feats, and impact on the franchise.</p>
-        <a href="https://sky.wnba.com/news/angel-reese-2025-season-recap" target="_blank"><button>Read Article</button></a>
-      </div>
+<div class="portfolio-item">
+<img src="https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2232943689.jpg?c=original&q=w_860,c_fill/f_avif">
+<div class="portfolio-item-content">
+<h3>Angel Reese 2025 Season Recap</h3>
+<p>A look back at Angel Reese’s 2025 season with the Chicago Sky, highlighting her breakout performances, historic rebounding feats, and impact on the franchise.</p>
+<a href="https://sky.wnba.com/news/angel-reese-2025-season-recap" target="_blank"><button>Read Article</button></a>
+</div>
+</div>
 
-      <!-- Article 4 -->
-      <div class="carousel-item">
-        <img src="https://www.sportsbusinessjournal.com/resizer/v2/7LDLXJNDIVCURJ47JKUVFBTJXU.jpg?auth=0a03c246c01d3343afcb03c084d17a96112815f9129375bbb9dc9c64d28f3670&width=1440&height=959" alt="Article 4">
-        <h3>Preview: Sky Host Fever For Second Time at United Center</h3>
-        <p>A look at the Chicago Sky’s second home meeting with the Indiana Fever at the United Center, where both teams aim to build on their prior encounter and leverage the historic matchup in front of a record crowd.</p>
-        <a href="https://sky.wnba.com/news/preview-sky-host-fever-for-second-time-at-united-center" target="_blank"><button>Read Article</button></a>
-      </div>
+<div class="portfolio-item">
+<img src="https://www.sportsbusinessjournal.com/resizer/v2/7LDLXJNDIVCURJ47JKUVFBTJXU.jpg?auth=0a03c246c01d3343afcb03c084d17a96112815f9129375bbb9dc9c64d28f3670&width=1440&height=959">
+<div class="portfolio-item-content">
+<h3>Preview: Sky Host Fever For Second Time at United Center</h3>
+<p>A look at the Chicago Sky’s second home meeting with the Indiana Fever at the United Center.</p>
+<a href="https://sky.wnba.com/news/preview-sky-host-fever-for-second-time-at-united-center" target="_blank"><button>Read Article</button></a>
+</div>
+</div>
 
-      <!-- Article 5 -->
-      <div class="carousel-item">
-        <img src="https://cst.brightspotcdn.com/dims4/default/38c242e/2147483647/strip/true/crop/4500x3000+0+0/resize/1680x1120!/format/webp/quality/90/?url=https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F8jKXTqJauSz7EMMzV-cmgcmXs4Q%3D%2F0x0%3A4500x3000%2F4500x3000%2Ffilters%3Afocal%282203x680%3A2204x681%29%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F23175118%2Fmerlin_101116494.jpg" alt="Article 5">
-        <h3>Courtney Vandersloot 2025 Season Recap</h3>
-        <p>A look back at Courtney Vandersloot’s 2025 season with the Chicago Sky, marked by her return to the franchise, a franchise‑record scoring milestone, and an early ACL injury that reshaped the year.</p>
-        <a href="https://sky.wnba.com/news/courtney-vandersloot-2025-season-recap" target="_blank"><button>Read Article</button></a>
-      </div>
+<div class="portfolio-item">
+<img src="https://cst.brightspotcdn.com/dims4/default/38c242e/2147483647/strip/true/crop/4500x3000+0+0/resize/1680x1120!/format/webp/quality/90/?url=https%3A%2F%2Fcdn.vox-cdn.com%2Fthumbor%2F8jKXTqJauSz7EMMzV-cmgcmXs4Q%3D%2F0x0%3A4500x3000%2F4500x3000%2Ffilters%3Afocal%282203x680%3A2204x681%29%2Fcdn.vox-cdn.com%2Fuploads%2Fchorus_asset%2Ffile%2F23175118%2Fmerlin_101116494.jpg">
+<div class="portfolio-item-content">
+<h3>Courtney Vandersloot 2025 Season Recap</h3>
+<p>A look back at Courtney Vandersloot’s 2025 season with the Chicago Sky, marked by her return to the franchise and a historic scoring milestone.</p>
+<a href="https://sky.wnba.com/news/courtney-vandersloot-2025-season-recap" target="_blank"><button>Read Article</button></a>
+</div>
+</div>
 
-      <!-- Article 6 -->
-      <div class="carousel-item">
-        <img src="https://variety.com/wp-content/uploads/2025/06/WNBA-Chicago-Sky-vs.-New-York-Liberty-Hulu-Featured.jpg?w=1000&h=667&crop=1" alt="Article 6">
-        <h3>Preview: Sky Travel to Face Liberty in Third Matchup of the Season</h3>
-        <p>A preview of the Chicago Sky’s road game against the New York Liberty in their third matchup of the season, outlining recent trends and stakes for both teams.</p>
-        <a href="https://sky.wnba.com/news/preview-sky-travel-to-face-liberty-in-third-matchup-of-the-season" target="_blank"><button>Read Article</button></a>
-      </div>
+<div class="portfolio-item">
+<img src="https://variety.com/wp-content/uploads/2025/06/WNBA-Chicago-Sky-vs.-New-York-Liberty-Hulu-Featured.jpg?w=1000&h=667&crop=1">
+<div class="portfolio-item-content">
+<h3>Preview: Sky Travel to Face Liberty in Third Matchup</h3>
+<p>A preview of the Chicago Sky’s road game against the New York Liberty.</p>
+<a href="https://sky.wnba.com/news/preview-sky-travel-to-face-liberty-in-third-matchup-of-the-season" target="_blank"><button>Read Article</button></a>
+</div>
+</div>
 
-    </div>
-
-    <button class="next">&#10095;</button>
-  </div>
 </section>
 
 <section id="resume">
@@ -334,28 +313,6 @@ I have hands-on experience creating content, managing events, and crafting engag
 <footer>
 <p>© 2026 Paige Zimmerman</p>
 </footer>
-
-<script>
-const track = document.querySelector('.carousel-track');
-const items = Array.from(track.children);
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-let index = 0;
-
-function updateCarousel() {
-  track.style.transform = `translateX(-${index * 100}%)`;
-}
-
-nextBtn.addEventListener('click', () => {
-  index = (index + 1) % items.length;
-  updateCarousel();
-});
-
-prevBtn.addEventListener('click', () => {
-  index = (index - 1 + items.length) % items.length;
-  updateCarousel();
-});
-</script>
 
 </body>
 </html>
