@@ -1,237 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<head> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet"> <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;500;700&display=swap" rel="stylesheet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Paige Zimmerman | Sports PR Portfolio</title>
 
 <style>
 
-html{
-scroll-behavior:smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  margin:0;
-  background:#FBFBF2;
-  color:#333;
-  line-height:1.7;
+  margin: 0;
+  background: #FBFBF2;
+  color: #333;
+  line-height: 1.7;
 }
 
 /* HEADER */
-
 header {
-  background:#CFD2CD;
-  color:#333;
-  padding:70px 20px 50px 20px;
-  text-align:center;
+  background: #CFD2CD;
+  color: #333;
+  padding: 70px 20px 50px 20px;
+  text-align: center;
 }
 
-header h1{
-font-size:42px;
-margin-bottom:8px;
-letter-spacing:.5px;
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
 }
 
-header p{
-font-size:18px;
-color:#555;
+header p {
+  font-size: 18px;
+  color: #555;
 }
 
 /* NAVIGATION */
-
 nav {
-  display:flex;
-  justify-content:center;
-  background:#E5E6E4;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  box-shadow:0 2px 6px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: center;
+  background: #E5E6E4;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 nav a {
-  color:#333;
-  padding:16px 22px;
-  text-decoration:none;
-  font-weight:500;
-  transition:0.25s;
+  color: #333;
+  padding: 16px 22px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.25s;
 }
 
 nav a:hover {
-  background:#CFD2CD;
+  background: #CFD2CD;
 }
 
 /* SECTIONS */
-
 section {
-  max-width:1000px;
-  margin:auto;
-  padding:50px 20px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px 20px;
 }
 
 h2 {
   font-family: 'Playfair Display', serif;
-  font-size:30px;
-  margin-bottom:20px;
-  border-left:5px solid #847577;
-  padding-left:12px;
+  font-size: 30px;
+  margin-bottom: 20px;
+  border-left: 5px solid #847577;
+  padding-left: 12px;
 }
 
-h1{
-font-family:'Playfair Display', serif;
+/* HOME SECTION - Professional and smaller */
+#home {
+  font-family: 'Merriweather', serif;
+  font-size: 16px;
+  max-width: 750px;
+  margin: auto;
 }
 
-/* HOME SECTION */
-
-#home{
-font-size:20px;
-max-width:900px;
-}
-
-#home p{
-font-size:20px;
-color:#444;
-margin-bottom:20px;
+#home p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 16px;
+  line-height: 1.6;
 }
 
 /* PORTFOLIO CARDS */
-
-/* PORTFOLIO GRID */
 .portfolio-grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-/* PORTFOLIO ITEM */
 .portfolio-item {
-  background:#E5E6E4;
-  padding:20px;
-  border-radius:10px;
-  box-shadow:0 6px 14px rgba(0,0,0,0.05);
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  transition:transform .25s ease, box-shadow .25s ease;
+  background: #E5E6E4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .portfolio-item:hover {
-  transform:translateY(-4px);
-  box-shadow:0 10px 20px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .portfolio-item img {
   width: 100%;
-  height: 180px;      /* fixed height for all images */
-  object-fit: cover;  /* crop and fill the box nicely */
-  border-radius:6px;
+  height: 180px;       /* uniform height */
+  object-fit: cover;
+  object-position: center; /* ensures image centers nicely */
+  border-radius: 6px;
 }
 
 .portfolio-item-content {
-  display:flex;
-  flex-direction:column;
-  gap:8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .portfolio-item h3 {
-  margin:0;
-  font-size:18px;
-  line-height:1.3;
-  display:-webkit-box;
-  -webkit-line-clamp:2; /* clamp long titles */
-  -webkit-box-orient:vertical;
-  overflow:hidden;
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .portfolio-item p {
-  margin:0;
-  color:#444;
-  line-height:1.5;
+  margin: 0;
+  color: #444;
+  line-height: 1.5;
 }
 
 .portfolio-item-content a {
-  margin-top:10px;
-  align-self:flex-end; /* button to the right */
+  margin-top: 10px;
+  align-self: flex-end;
 }
-
-/* MOBILE */
-@media(max-width:700px){
-  .portfolio-item {
-    text-align: center;
-  }
-  .portfolio-item-content a {
-    align-self: center;
-  }
-  .portfolio-item img {
-    height: auto; /* let images resize naturally on small screens */
-  }
-}
-
 
 /* BUTTONS */
-
 button {
-  padding:10px 18px;
-  border:none;
-  background:#847577;
-  color:white;
-  border-radius:6px;
-  cursor:pointer;
-  font-weight:500;
-  transition:.25s;
+  padding: 10px 18px;
+  border: none;
+  background: #847577;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.25s;
 }
 
 button:hover {
-  background:#6f6264;
+  background: #6f6264;
 }
 
 /* LINKS */
-
-a{
-color:#847577;
+a {
+  color: #847577;
 }
 
 /* FOOTER */
-
 footer {
-  text-align:center;
-  padding:30px;
-  background:#CFD2CD;
-  color:#333;
-  margin-top:40px;
-  font-size:14px;
+  text-align: center;
+  padding: 30px;
+  background: #CFD2CD;
+  color: #333;
+  margin-top: 40px;
+  font-size: 14px;
 }
 
 /* MOBILE */
-
-@media(max-width:700px){
-
-header h1{
-font-size:32px;
+@media(max-width:800px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-#home p{
-font-size:18px;
-}
+@media(max-width:700px) {
+  header h1 {
+    font-size: 32px;
+  }
 
-.portfolio-item{
-flex-direction:column;
-text-align:center;
-}
+  #home {
+    max-width: 90%;
+  }
 
-.portfolio-item img{
-width:100%;
-height:auto;
-}
+  #home h2 {
+    font-size: 24px;
+  }
 
-}
+  #home p {
+    font-size: 15px;
+  }
 
-@media(max-width:800px){
-.portfolio-grid{
-grid-template-columns:1fr;
-}
+  .portfolio-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .portfolio-item-content a {
+    align-self: center;
+  }
+
+  .portfolio-item img {
+    height: auto; /* images resize naturally */
+  }
 }
 
 </style>
