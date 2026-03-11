@@ -93,7 +93,7 @@ margin-bottom:20px;
 
 /* PORTFOLIO CARDS */
 
-#portfolio{
+.portfolio-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:25px;
@@ -121,8 +121,13 @@ box-shadow:0 10px 20px rgba(0,0,0,0.1);
   height:110px;
   object-fit:cover;
   border-radius:6px;
+  transition:transform .3s ease;
 }
 
+.portfolio-item:hover img{
+transform:scale(1.05);
+}
+  
 .portfolio-item-content {
   flex:1;
 }
@@ -189,6 +194,12 @@ height:auto;
 
 }
 
+@media(max-width:800px){
+.portfolio-grid{
+grid-template-columns:1fr;
+}
+}
+
 </style>
 </head>
 
@@ -223,6 +234,8 @@ I have hands-on experience creating content, managing events, and crafting engag
 <section id="portfolio">
 
 <h2>Portfolio</h2>
+
+<div class="portfolio-grid">
 
 <div class="portfolio-item">
 <img src="https://images2.minutemediacdn.com/image/upload/c_crop,x_0,y_104,w_4767,h_2681/c_fill,w_2160,ar_16:9,f_auto,q_auto,g_auto/images%2FGettyImages%2Fmmsport%2F403%2F01jxw0phvt41pss16nnk.jpg">
