@@ -123,10 +123,10 @@ margin-bottom:20px;
 }
 
 .portfolio-item img {
-  width:100%;
-  height:auto;
+  width: 100%;
+  height: 180px;      /* fixed height for all images */
+  object-fit: cover;  /* crop and fill the box nicely */
   border-radius:6px;
-  object-fit:cover;
 }
 
 .portfolio-item-content {
@@ -157,18 +157,15 @@ margin-bottom:20px;
 }
 
 /* MOBILE */
-@media(max-width:800px){
-  .portfolio-grid {
-    grid-template-columns:1fr;
-  }
-}
-
 @media(max-width:700px){
   .portfolio-item {
-    text-align:center;
+    text-align: center;
   }
   .portfolio-item-content a {
-    align-self:center;
+    align-self: center;
+  }
+  .portfolio-item img {
+    height: auto; /* let images resize naturally on small screens */
   }
 }
 
